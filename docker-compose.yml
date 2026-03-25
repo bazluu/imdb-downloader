@@ -1,14 +1,13 @@
 services:
-
-  imdb_redirect:
+  movie_dinghy_server:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: imdb_redirect
+    container_name: movie_dinghy_server
     command: python manage.py runserver 0.0.0.0:8000
     working_dir: /app
     environment:
       - DEBUG=True
+      - PYTHONUNBUFFERED=1
     ports:
       - "8000:8000"
-
