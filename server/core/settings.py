@@ -29,9 +29,9 @@ OMDB_API_KEY = os.getenv("OMDB_API_KEY")
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")  # Defined in docker-compose
+DEBUG = True
 
-ALLOWED_HOSTS = ["1imdb.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["1imdb.com", "www.1imdb.com", "127.0.0.1"]
 
 
 # Application definition

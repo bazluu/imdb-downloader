@@ -7,7 +7,6 @@ services:
     command: gunicorn core.wsgi:application --bind 0.0.0.0:8000 --workers 4
     working_dir: /app
     environment:
-      - DEBUG=False
       - SECRET_KEY
       - OMDB_API_KEY
     ports:
