@@ -1,0 +1,14 @@
+services:
+  movie_dinghy_server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.prod
+    container_name: movie_dinghy_server
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000 --workers 4
+    working_dir: /app
+    environment:
+      # - DJANGO_SETTINGS_MODULE=core.settings
+      - DEBUG=False
+    ports:
+      - "8000:8000"
+    restart: unless-stopped

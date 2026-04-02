@@ -1,7 +1,7 @@
 services:
   movie_dinghy_server:
     build:
-      context: .
+      context: ./server
       dockerfile: Dockerfile
     container_name: movie_dinghy_server
     command: python manage.py runserver 0.0.0.0:8000
