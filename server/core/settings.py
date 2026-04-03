@@ -34,8 +34,6 @@ DEBUG = True
 ALLOWED_HOSTS = ["1imdb.com", "www.1imdb.com", "127.0.0.1"]
 
 
-# Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -81,10 +79,15 @@ WSGI_APPLICATION = "core.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+if DEBUG is True:
+    db_name = "dev.sqlite3"
+else:
+    db_name = "db.sqlite3"
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / db_name,
     }
 }
 
